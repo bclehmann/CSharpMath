@@ -28,7 +28,7 @@ namespace CSharpMath.System.Drawing.Common {
 
       using Pen pen = new Pen(color);
       using (Graphics graphics = Graphics.FromImage(owner.Image)) {
-        graphics.SmoothingMode = GetSmoothingMode();
+        graphics.SmoothingMode = owner.GetSmoothingMode();
         graphics.DrawPath(pen, path);
       }
 
