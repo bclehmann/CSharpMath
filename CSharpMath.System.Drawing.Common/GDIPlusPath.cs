@@ -14,12 +14,12 @@ namespace CSharpMath.System.Drawing.Common {
     public override Color? Foreground { get; set; }
 
     public override void CloseContour() => path.CloseFigure();
-    public override void Curve3(float x1, float y1, float x2, float y2) {
+    public override void Curve3(float x1, float y1, float x2, float y2) { // This is not a Bezier like in the SkiaSharp renderer 
       path.AddCurve(new PointF[] { new PointF(x1, y1), new PointF(x2, y2) });
       location = path.GetLastPoint();
     }
 
-    public override void Curve4(float x1, float y1, float x2, float y2, float x3, float y3) {
+    public override void Curve4(float x1, float y1, float x2, float y2, float x3, float y3) { // This is not a Bezier like in the SkiaSharp renderer 
       path.AddCurve(new PointF[] { new PointF(x1, y1), new PointF(x2, y2), new PointF(x3, y3) });
       location = path.GetLastPoint();
     }
